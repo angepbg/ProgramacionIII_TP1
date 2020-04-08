@@ -60,6 +60,7 @@ class Ropa{
                 descuento = prompt("De cuanto desea el descuento?")
             }while(descuento >= self.data.amount);
             
+            descuento = descuento ? descuento : 0; 
             precioVenta = self.data.amount - parseInt(descuento)
 
         }

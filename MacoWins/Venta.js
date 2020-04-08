@@ -3,10 +3,9 @@
 const COHEFICIENTE = 3;
 class Venta{
 
-    constructor(data, opcion){
+    constructor(){
 
         this.ventas = []
-        this.fillData(data)
     }
 
     fillData(data, opcion){
@@ -20,6 +19,5 @@ class Venta{
         }
         alert("La prenda se vendió en: "+data.finalAmount);
         this.ventas.push(data)
-        console.log("this ventas: ",this.ventas)
     }
 }

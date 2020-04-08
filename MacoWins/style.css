@@ -1,3 +1,6 @@
 .container_template{
     display: none;
 }
+.row:before{
+    content: none !important;
+}

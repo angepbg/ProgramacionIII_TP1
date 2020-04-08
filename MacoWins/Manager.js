@@ -25,8 +25,9 @@ class Manager{
                 sold: false,
                 amount: 800
             }
-        ]
+        ],
 
+        this.ventas = new Venta();
         this.instance = []
         this.render()
     }
@@ -52,23 +53,22 @@ class Manager{
             let prenda = null
             let opcion = null
             do{
-                id = prompt("Ingrese ID de la prende a vender")
+                id = prompt("Ingrese ID de la prenda a vender")
                 prenda = self.instance.filter(item => {
                     return item.data.id == id
                 })[0]
-                console.log("prenda: ",prenda)
             }while(!prenda)
             do{
                 opcion = prompt("Desea pagar en efectivo o tarjeta? 1. efectivo 2. tarjeta.");
 
             }while(!opcion || opcion < 1 || opcion > 2)
             
-            let venta = new Venta(prenda.data, opcion)
+            self.ventas.fillData(prenda.data, opcion)
         })
 
-        let gananciaContainer = document.querySelector(`.listener_ganancia`);
+        let gananciaContainer = document.querySelector(`.listener_ganancias`);
         gananciaContainer.addEventListener('click', function(){
-            
+            console.log("ventas: ", self.ventas.ventas)
         })
     }
 }
